@@ -262,40 +262,40 @@
               <div class='bottom_number_list_content'>
                 <div class="title_content">
                   <div class="unit">单位：吨</div>
-                  <div class="sub_title">产品产量月数据 >></div>
+                  <div id="monthData" class="sub_title">产品产量月数据 >></div>
                 </div>
 
                 <div class='bottom_number_list'>
                   <div class="circle_content">
-                    <div class="first_circle circle_img">
+                    <div class="first_circle circle_img" attr-index="0">
                       11434
                     </div>
                     <div>常压加工原油量</div>
                   </div>
 
                   <div class="circle_content">
-                    <div class="second_circle circle_img">
+                    <div class="second_circle circle_img" attr-index="1">
                       2702
                     </div>
                     <div>尿素产量</div>
                   </div>
 
                   <div class="circle_content">
-                    <div class="third_circle circle_img">
+                    <div class="third_circle circle_img" attr-index="2">
                       4566
                     </div>
                     <div>合成氨</div>
                   </div>
 
                   <div class="circle_content">
-                    <div class="fourth_circle circle_img">
+                    <div class="fourth_circle circle_img" attr-index="3">
                       2702
                     </div>
                     <div>汽油</div>
                   </div>
 
                   <div class="circle_content">
-                    <div class="fifth_circle circle_img">
+                    <div class="fifth_circle circle_img" attr-index="4">
                       2702
                     </div>
                     <div>柴油</div>
@@ -303,7 +303,7 @@
 
 
                   <div class="circle_content">
-                    <div class="sixth_circle circle_img">
+                    <div class="sixth_circle circle_img" attr-index="5">
                       4566
                     </div>
                     <div>航煤</div>
@@ -329,7 +329,7 @@
                 <span class="title">各单位风险作业数量统计</span>
               </div>
             </li>
-            <li id='cross'>
+            <li id='cross' class="cross_chart">
 
             </li>
             <li class='unit_risk_tab'>
@@ -386,7 +386,7 @@
                 </div>
 
                 <div class="type_tags">
-                  <span class="tag">#92汽油</span>
+                  <span class="tag active">#92汽油</span>
                   <span class="tag">#95汽油</span>
                   <span class="tag">柴油</span>
                   <span class="tag">航煤</span>
@@ -419,7 +419,7 @@
                 </div>
 
                 <div class="type_buttons">
-                  <div class="type_button_left">炼油</div>
+                  <div class="type_button_left active">炼油</div>
                   <div class="type_button_right">化肥</div>
                 </div>
               </div>
@@ -512,6 +512,24 @@
       <p>宁夏石化个人工作平台</p>
       <p>技术支持: 昆仑数智科技有限责任公司</p>
     </footer>
+
+
+    <div class="dialog-wrapper" id="dialog-wrapper">
+      <div role="dialog" aria-modal="true" aria-label="提示" class="dialog">
+        <div class="dialog_header">
+          <span class="dialog_title"></span>
+          <div class="dialog_headerBtn" id="dialog_headerBtn">
+
+          </div>
+        </div>
+
+        <div class="dialog_body">
+
+        </div>
+      </div>
+    </div>
+
+    <div class="modal_mask" id="modal_mask"></div>
   </div>
   <script type="text/javascript" src="./config/jquery-3.5.1.min.js"></script>
   <script type="text/javascript" src="./js/_.js"></script>
@@ -521,7 +539,10 @@
   <script type="text/javascript" src="./js/bar.js"></script>
   <script type="text/javascript" src="./js/environmental.js"></script>
   <script type="text/javascript" src="./js/indicators.js"></script>
-
+  <script type="text/javascript" src="js/circleDialogChart.js"></script>
+  <script type="text/javascript" src="./js/monthDataChart.js"></script>
+  <script type="text/javascript" src="./js/const.js"></script>
+  <script type="text/javascript" src="./js/createChart.js"></script>
 </body>
 
 </html>

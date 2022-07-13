@@ -15,13 +15,8 @@ function environmentalDraw (yData1, yData2) {
                 type: 'gauge',
                 startAngle: 180,
                 endAngle: 0,
-                // progress: {
-                //     show: true,
-                //     width: 6
-                // },
                 grid: {
-                    width: 200,
-                    height: 120
+                    top: 0,
                 },
                 axisLine: {
                     lineStyle: {
@@ -68,16 +63,24 @@ function environmentalDraw (yData1, yData2) {
                     size: 4,
                     itemStyle: {
                         borderWidth: 10,
-                    }
+                    },
+                    // offsetCenter: [0, '-10%'],
+                },
+                title: {
+                    offsetCenter: [0, '30%'],
+                    fontSize: 12,
+                    color: '#fff'
                 },
                 detail: {
                     valueAnimation: true,
                     fontSize: 16,
+                    offsetCenter: [0, '60%'],
                     color: '#FFBF24',
                 },
                 data: [
                     {
-                        value: 70
+                        value: 70,
+                        name: '外排水COD'
                     }
                 ]
             }
@@ -86,4 +89,22 @@ function environmentalDraw (yData1, yData2) {
     myChart1.setOption(option);
     myChart2.setOption(option);
     myChart3.setOption(option);
+
+    myChart1.getZr().on('click', function (params) {
+        const chartId = 'environment_line_0';
+        createChartDiv(chartId, '环保趋势1');
+        circleDialogChartDrawer(0, chartId);
+    });
+
+    myChart2.getZr().on('click', function (params) {
+        const chartId = 'environment_line_1';
+        createChartDiv(chartId, '环保趋势2');
+        circleDialogChartDrawer(1, chartId);
+    });
+
+    myChart3.getZr().on('click', function (params) {
+        const chartId = 'environment_line_2';
+        createChartDiv(chartId, '环保趋势3');
+        circleDialogChartDrawer(2, chartId);
+    });
 }

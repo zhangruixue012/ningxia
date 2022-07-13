@@ -52,11 +52,13 @@
 #nav{
   height: 94px;
   display: flex;
-  justify-content: space-between;
+  width: 1400px;
+  margin: 0 auto;
+  justify-content: center;
 }
 #nav .nav_box_left{
   margin-left: 210px;
-  width: 434px;
+  width: 437px;
   flex-shrink: 0;
 }#nav .nav_person_info{
   display: flex;
@@ -343,6 +345,7 @@
 }
 #section .section_one_cone .title_content .sub_title{
   padding: 8px 30px;
+  cursor: pointer;
   background: linear-gradient(90deg, rgba(0,88,179,0) 0%, rgba(0,88,179,0.9900) 51%, #0058B3 51%, rgba(0,88,179,0) 100%);
 }
 
@@ -358,6 +361,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
 }
 #section .section_one_cone .bottom_number_list div.first_circle{
   color: #866FF9;
@@ -436,7 +441,7 @@
 
 #section .section_chart_name {
   font-size: 18px;
-  margin:15px;
+  margin: 15px 15px 0 15px;
   font-weight: 500;
   display: flex;
   justify-content: space-between;
@@ -465,15 +470,15 @@
 #section .section_chart_name .type_buttons {
   display: flex;
   font-size: 12px;
-  color: #fff;
   height: 26px;
   line-height: 26px;
-
+  z-index: 10000;
 }
 
 #section .section_chart_name .type_buttons .type_button_left {
   width: 47px;
-  background: #00A2FF;
+  color: #00A2FF;
+  border: 1px solid #0054A6;
   border-radius: 7px 0px 0px 7px;
   text-align: center;
   cursor: pointer;
@@ -487,6 +492,11 @@
   border: 1px solid #0054A6;
   text-align: center;
   cursor: pointer;
+}
+
+#section .section_chart_name .type_buttons .active {
+  color: #fff;
+  background: #00A2FF;
 }
 
 #section .section_chart_name .type_tags {
@@ -509,9 +519,14 @@
   color: #45FFFF;
 }
 
+#section .section_chart_name .type_tags .active {
+  background: #06CCD1;
+  color: #fff;
+}
+
 #section .section_tow_panel .curve_chart {
   width: 100%;
-  height: calc(100% - 56px);
+  height: calc(100% - 16px);
 }
 
 
@@ -607,6 +622,7 @@
 #section .section_panel_name{
   position:absolute;
 }
+
 #section .section_panel_box{
   display: flex;
   height: 100%;
@@ -630,7 +646,7 @@
   height: 362px;
   background: rgba(3,62,138,0.3000);
   border: 1px solid #06CCD1;
-  margin: 0 30px 0 60px;
+  margin: 15px 30px 0 60px;
 }
 #section .section_one_cycle .mainli:nth-child(3){
   padding: 40px 20px 20px 60px;
@@ -688,16 +704,9 @@
   margin:20px 0;
 }
 
-#section .section_tow_right #environmental{
-  display: flex;
-  justify-content: space-between;
-  height: 132px;
-}
-
 #section .section_tow_right .dashboard_chart {
-  height: 170px;
-  width: 350px;
-  /*width: 33%;*/
+  height: 180px;
+  width: 280px;
 }
 
 
@@ -710,9 +719,10 @@
   margin-top:20px;
 }
 
+/*财务日数据及技术经济指标*/
 #section .section_tow_right .economic_indicators_content .section_panel_box{
   display: flex;
-  margin: 0 15px;
+  margin: 15px 15px 0 15px;
   width: 100%;
 }
 
@@ -774,6 +784,79 @@
   height: 270px;
   margin-left: 10px;
 }
+
+.dialog-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10005;
+  visibility: hidden;
+}
+
+.dialog-wrapper .dialog {
+  position: relative;
+  border-radius: 2px;
+  box-sizing: border-box;
+  z-index: 10006;
+  margin: 15vh auto 50px;
+  background: #0A446C;
+  width: 940px;
+  height: 450px;
+}
+
+.dialog-wrapper .dialog .dialog_header{
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border: 1px solid #45FFFF;
+}
+
+.dialog-wrapper .dialog .dialog_header .dialog_title{
+  line-height: 24px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.dialog-wrapper .dialog .dialog_header .dialog_headerBtn {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  background: url("../image/close.png") no-repeat;
+}
+
+.dialog-wrapper .dialog .dialog_body {
+  padding: 20px;
+  border-left: 1px solid #45FFFF;
+  border-right: 1px solid #45FFFF;
+  border-bottom: 1px solid #45FFFF;
+  height: 408px;
+}
+
+.dialog_chart {
+  width: 100%;
+  height: 368px;
+}
+
+.modal_mask {
+  z-index: 10004;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+  visibility: hidden;
+}
+
+
 
 
 /* 底部 */

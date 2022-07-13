@@ -3,9 +3,10 @@ function curveDraw (yData) {
   var myChart = echarts.init(chartDom);
   var option = {
     grid: {
-      bottom: 50,
-      left: 50,
-      right: 40,
+      top: 10,
+      // left: 50,
+      // right: 40,
+
     },
     tooltip: {
       trigger: 'axis',

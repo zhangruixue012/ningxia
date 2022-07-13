@@ -393,6 +393,7 @@ function barDraw (yData, drilldownData, maxYData) {
   //   }
   // ];
   myChart.getZr().on('click', function (params) {
+
     let pointInPixel = [params.offsetX, params.offsetY]
     let xIndex = null
     if (myChart.containPixel('grid', pointInPixel)) {
@@ -400,58 +401,11 @@ function barDraw (yData, drilldownData, maxYData) {
       if (xIndex === -0) xIndex = 0
     }
     if (xIndex != null) {
-      myChart.setOption({
-        xAxis: {
-          data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
-          axisTick: {
-            show: false   //刻度线
-          }
-        },
-        tooltip: {
-          show: false,
-        },
-        series: [
-          {
-            id: '1',
-            data: []
-          },
-          {
-            id: '2',
-            data: []
-          },
-          {
-            type: 'line',
-            id: '3',
-            smooth: true,
-            symbol: 'none',
-            dataGroupId: drilldownData[xIndex].dataGroupId,
-            data: drilldownData[xIndex].data,
-            universalTransition: {
-              enabled: true,
-              divideShape: 'clone'
-            }
-          },
-          {
-            id: '4',
-            data: []
-          }
-        ],
-        graphic: [
-          {
-            type: 'text',
-            left: 20,
-            top: 0,
-            style: {
-              text: 'Back',
-              fontSize: 14,
-              fill: '#fff'
-            },
-            onclick: function () {
-              myChart.setOption(option);
-            }
-          }
-        ]
-      });
+
+      const chartId = 'inventory_chart_' + xIndex;
+      createChartDiv(chartId, INVENTORY_OPTION_MAPPING[xIndex].title);
+      circleDialogChartDrawer(xIndex, chartId);
+
     }
   });
   myChart.setOption(option);

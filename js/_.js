@@ -35,6 +35,14 @@ $(document).ready(function () {
     }
   }
 
+  $(".type_tags span").click(function () {
+    $(this).addClass("active").siblings().removeClass("active");
+
+    curveDraw([[82, 93, 901, 934, 290, 130, 120, 780, 880, 560, 120, 450],
+      [72, 73, 90, 974, 120, 130, 10, 90, 130, 1000, 880, 65],
+      [19, 73, 910, 94, 190, 90, 120, 1140, 121, 101, 100, 890]])
+  })
+
 
   //销售模块的曲线图
   //yData = [[], [], []]的第一据是外排水COD的数据，第二项NH3-N的数据，第三项是外排水PH的数据
@@ -286,31 +294,8 @@ $(document).ready(function () {
     }
   ];
   barDraw(yData, drilldownData, maxYData)
-  // let pieData = [
-  //   { value: 20, name: '累计数据' }, //100
-  //   { value: 20, name: '日量数据' }, //20
-  // ]
-  // pie1Draw(pieData)
-  // pie2Draw(pieData)
-  /*
-    a/b*c （a和b是后端返回的数值，c是固定值）
-      a是炼油利用的值
-      b是日量或者累计的值
-      c是父div的width
-    */
-  // $("#refiningMarginsDay").width(500 / 1000 * 75)
-  // $("#refiningMarginsTotal").width(200 / 1000 * 75)
-  // $("#oilProfitDay").width(200 / 1000 * 75)
-  // $("#oilProfitTotal").width(200 / 1000 * 75)
-  // $("#finishedCostDay").width(200 / 1000 * 75)
-  // $("#finishedCostTotal").width(200 / 1000 * 75)
-  // $("#oilFinishedCostDay").width(200 / 1000 * 75)
-  // $("#oilFinishedCostTotal").width(200 / 1000 * 75)
 
-  // 环保模块 tab切换 调取后端数据,传入对应的仪表盘中最大值和value
-  // panel1Draw(100, 50)
-  // panel2Draw(100, 50)
-  // panel3Draw(100, 50)
+
   $(".section_panel_tab  li").click(function () {
     $(this).addClass("current").siblings().removeClass("current");
     var index = $(this).index(); //index为0是燃油,1为化肥
@@ -343,9 +328,32 @@ $(document).ready(function () {
     alert('点击更多按钮')
   });
 
+  $('.type_buttons div').click(function () {
+    $(this).addClass("active").siblings().removeClass("active");
+    environmentalDraw();
+  })
+
   // 环保模块仪表盘绘制
   environmentalDraw();
 
   // 财务日数据及技术经济指标模块
   indicatorsDraw();
+
+  // 点击产品产量月数据
+  $("#monthData").click(function () {
+
+    createChartDiv('monthData_dialog_chart', '产品产量月数据');
+
+    monthDataChartDraw('monthData_dialog_chart');
+  });
+
+  // 点击圆环
+  $('.circle_content .circle_img').click(function () {
+    var index = $(this).attr('attr-index');
+
+
+    const chartId = 'circle_chart_' + index;
+    createChartDiv(chartId, OPTION_MAPPING[index].title);
+    circleDialogChartDrawer(index, chartId);
+  })
 })
