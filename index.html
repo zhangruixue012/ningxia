@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宁夏石化</title>
+  <link type="text/css" rel="stylesheet" href="./css/base.css" />
+  <link type="text/css" rel="stylesheet" href="./css/_.css" />
+  <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script> -->
+  <script src="./config/echarts.min.js"></script>
+
+</head>
+
+<body>
+  <div id="body_box">
+    <div style='background-color: #0B4D7E'>
+      <header id="top">
+        <ul class='top_box_left'>
+          <li class='top_img'><img src="./image/title.png"></li>
+          <li class='top_content'>宁夏石化个人工作平台</li>
+        </ul>
+        <ul class='top_box_right'>
+          <li class='top_date'><img src="./image/weather.png" alt="">2022年3月15日 星期二</li>
+        </ul>
+      </header>
+
+      <nav id='nav'>
+        <div class='nav_box_left'>
+          <ul class='nav_person_info'>
+            <li class='nav_person_img'><img src="./image/person_m.png"></li>
+            <li class='nav_person_content'>
+              <div class='nav_person_name'>
+                <span>宁夏石化管理员</span>
+                <img src="./image/setting1.png" alt="">
+              </div>
+              <div class='nav_person_money'>
+                <span>当前余额</span>
+                <span class='nav_person_money_num'>0.00</span>
+                <span>元</span>
+              </div>
+            </li>
+          </ul>
+          <ul class='nav_person_work'>
+            <li> <img src="./image/ka.png" alt=""></li>
+            <li>最早刷卡 (今日未刷卡)</li>
+            <li>|</li>
+            <li>最晚刷卡 (今日未刷卡)</li>
+            <li>刷卡记录</li>
+            <li>消费记录</li>
+            <li>网上订购</li>
+          </ul>
+        </div>
+
+        <ul class='nav_box_right'>
+          <li class='nav_hover_li'>
+            <p style='margin-bottom: 5px;'>
+              <img src="./image/common_system.png"> </img>
+            </p>
+            <p>常用系统</p>
+            <div class='nav_hover_box' style='display:none'>
+              <div class='nav_right_triangle'></div>
+              <div class='nav_hover_content'>
+                <ul>
+                  <li><a href="">档案管理 </a><span>7</span></li>
+                  <li><a href="">电子邮件 </a><span>2</span></li>
+                  <li><a href="">绩效管理 </a></li>
+                  <li><a href="">先进报警 </a></li>
+                  <li><a href="">* 电子公文 </a></li>
+                </ul>
+                <div><a href="">更多 </a><img src="./image/more.png"></div>
+              </div>
+            </div>
+          </li>
+          <li class='nav_hover_li'>
+            <p style='margin-bottom: 5px;'><img src="./image/production_control.png"></img></p>
+            <p>生产管控</p>
+            <div class='nav_hover_box' style='display: none'>
+              <div class='nav_right_triangle'></div>
+              <div class='nav_hover_content'>
+                <ul>
+                  <li><a href="">HSE</a></li>
+                  <li><a href="">生产受控 </a></li>
+                  <li><a href="">三查四定 </a></li>
+                  <li><a href="">能源管理优化系统 </a></li>
+                  <li><a href="">生产经营周例会材料 </a></li>
+                  <li><a href="">生打机组检测 </a></li>
+                </ul>
+                <div><a href="">更多 </a><img src="./image/more.png"></div>
+              </div>
+            </div>
+          </li>
+          <li class='nav_hover_li'>
+            <p style='margin-bottom: 5px;'><img src="./image/todo_work.png"></img></p>
+            <p>待办工作</p>
+            <div class='nav_hover_box' style='display: none'>
+              <div class='nav_right_triangle'></div>
+              <div class='nav_hover_content'>
+                <ul>
+                  <li><a href="">档案管理 </a></li>
+                  <li><a href="">电子邮件 </a></li>
+                  <li><a href="">绩效管理 </a></li>
+                  <li><a href="">先进报警 </a></li>
+                  <li><a href="">电子公文 </a></li>
+                </ul>
+                <div><a href="">更多 </a><img src="./image/more.png"></div>
+              </div>
+            </div>
+          </li>
+          <li class='nav_hover_li'>
+            <p style='margin-bottom: 5px;'><img src="./image/business_processing.png"></img></p>
+            <p>业务处理</p>
+            <div class='nav_hover_box' style='display: none'>
+              <div class='nav_right_triangle'></div>
+              <div class='nav_hover_content'>
+                <ul>
+                  <li><a href="">档案管理 </a></li>
+                  <li><a href="">电子邮件 </a></li>
+                  <li><a href="">绩效管理 </a></li>
+                  <li><a href="">先进报警 </a></li>
+                  <li><a href="">电子公文 </a></li>
+                </ul>
+                <div><a href="">更多 </a><img src="./image/more.png"></div>
+              </div>
+            </div>
+          </li>
+          <li class='nav_hover_li'>
+            <p style='margin-bottom: 5px;'><img src="./image/process_approval.png"></img></p>
+            <p>流程审批</p>
+            <div class='nav_hover_box' style='display: none'>
+              <div class='nav_right_triangle'></div>
+              <div class='nav_hover_content'>
+                <ul>
+                  <li><a href="">档案管理 </a></li>
+                  <li><a href="">电子邮件 </a></li>
+                  <li><a href="">绩效管理 </a></li>
+                  <li><a href="">先进报警 </a></li>
+                  <li><a href="">电子公文 </a></li>
+                </ul>
+                <div><a href="">更多 </a><img src="./image/more.png"></div>
+              </div>
+            </div>
+          </li>
+          <li class='nav_hover_li'>
+            <p style='margin-bottom: 5px;'><img src="./image/statistical_analysis.png"></img></p>
+            <p>统计分析</p>
+            <div class='nav_hover_box' style='display: none'>
+              <div class='nav_right_triangle'></div>
+              <div class='nav_hover_content'>
+                <ul>
+                  <li><a href="">档案管理 </a></li>
+                  <li><a href="">电子邮件 </a></li>
+                  <li><a href="">绩效管理 </a></li>
+                  <li><a href="">先进报警 </a></li>
+                  <li><a href="">电子公文 </a></li>
+                </ul>
+                <div><a href="">更多 </a><img src="./image/more.png"></div>
+              </div>
+            </div>
+          </li>
+          <li class='nav_hover_li'>
+            <p style='margin-bottom: 5px;'><img src="./image/system_settings.png"></img></p>
+            <p>系统设置</p>
+            <div class='nav_hover_box' style='display: none'>
+              <div class='nav_right_triangle'></div>
+              <div class='nav_hover_content'>
+                <ul>
+                  <li><a href="">档案管理 </a></li>
+                  <li><a href="">电子邮件 </a></li>
+                  <li><a href="">绩效管理 </a></li>
+                  <li><a href="">先进报警 </a></li>
+                  <li><a href="">电子公文 </a></li>
+                </ul>
+                <div><a href="">更多 </a><img src="./image/more.png"></div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href=""><img src="./image/sign_out.png"></img>退出</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <section id="section">
+      <ul class="section_one">
+
+        <!--左上部分-->
+        <li class="section_one_left">
+          <ul class="section_one_cycle">
+            <li>
+              <div class="border_corner border_corner_left_top"></div>
+              <div class="border_corner border_corner_right_top"></div>
+              <div class="border_corner border_corner_left_bottom"></div>
+              <div class="border_corner border_corner_right_bottom"></div>
+              <div class="main">
+                <p>常压装置长周期</p>
+                <p><span>5</span> 天</p>
+              </div>
+            </li>
+            <li>
+              <div class="border_corner border_corner_left_top"></div>
+              <div class="border_corner border_corner_right_top"></div>
+              <div class="border_corner border_corner_left_bottom"></div>
+              <div class="border_corner border_corner_right_bottom"></div>
+              <div class="main">
+                <p>催化炼化长周期</p>
+                <p><span>0</span> 天</p>
+              </div>
+            </li>
+            <li>
+              <div class="border_corner border_corner_left_top"></div>
+              <div class="border_corner border_corner_right_top"></div>
+              <div class="border_corner border_corner_left_bottom"></div>
+              <div class="border_corner border_corner_right_bottom"></div>
+              <div class="main">
+                <p>合成氨装置长周期</p>
+                <p><span>256</span> 天</p>
+              </div>
+            </li>
+            <li>
+              <div class="border_corner border_corner_left_top"></div>
+              <div class="border_corner border_corner_right_top"></div>
+              <div class="border_corner border_corner_left_bottom"></div>
+              <div class="border_corner border_corner_right_bottom"></div>
+              <div class="main">
+                <p>尿素装置长周期</p>
+                <p><span>14</span> 天</p>
+              </div>
+            </li>
+            <li>
+              <div class="border_corner border_corner_left_top"></div>
+              <div class="border_corner border_corner_right_top"></div>
+              <div class="border_corner border_corner_left_bottom"></div>
+              <div class="border_corner border_corner_right_bottom"></div>
+              <div class="main">
+                <p>干部请假</p>
+                <p><span>0</span> 人</p>
+              </div>
+            </li>
+          </ul>
+          <div class="section_one_cone">
+            <div class="border_corner border_corner_left_top"></div>
+            <div class="border_corner border_corner_right_top"></div>
+            <div class="border_corner border_corner_left_bottom"></div>
+            <div class="border_corner border_corner_right_bottom"></div>
+            <div class="main">
+              <div class="top_number_list">
+                <div class="green_border">
+                  <p>80%</p>
+                  <p>常压负荷</p>
+                </div>
+                <div class="red_border">
+                  <p>79%</p>
+                  <p>已发布规范</p>
+                </div>
+                <div class="purple_border">
+                  <p>100%</p>
+                  <p>合成氮转化负荷</p>
+                </div>
+              </div>
+              <div class='bottom_number_list_content'>
+                <div class="title_content">
+                  <div class="unit">单位：吨</div>
+                  <div class="sub_title">产品产量月数据 >></div>
+                </div>
+
+                <div class='bottom_number_list'>
+                  <div class="circle_content">
+                    <div class="first_circle circle_img">
+                      11434
+                    </div>
+                    <div>常压加工原油量</div>
+                  </div>
+
+                  <div class="circle_content">
+                    <div class="second_circle circle_img">
+                      2702
+                    </div>
+                    <div>尿素产量</div>
+                  </div>
+
+                  <div class="circle_content">
+                    <div class="third_circle circle_img">
+                      4566
+                    </div>
+                    <div>合成氨</div>
+                  </div>
+
+                  <div class="circle_content">
+                    <div class="fourth_circle circle_img">
+                      2702
+                    </div>
+                    <div>汽油</div>
+                  </div>
+
+                  <div class="circle_content">
+                    <div class="fifth_circle circle_img">
+                      2702
+                    </div>
+                    <div>柴油</div>
+                  </div>
+
+
+                  <div class="circle_content">
+                    <div class="sixth_circle circle_img">
+                      4566
+                    </div>
+                    <div>航煤</div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            </div>
+        </li>
+
+
+        <!--右上部分-->
+        <li class="section_one_right">
+          <div class="border_corner border_corner_left_top"></div>
+          <div class="border_corner border_corner_right_top"></div>
+          <div class="border_corner border_corner_left_bottom"></div>
+          <div class="border_corner border_corner_right_bottom"></div>
+          <ul class="main">
+            <li class="section_chart_name">
+              <div class="chart_name_title">
+                <span class="solid_circle"></span>
+                <span class="title">各单位风险作业数量统计</span>
+              </div>
+            </li>
+            <li id='cross'>
+
+            </li>
+            <li class='unit_risk_tab'>
+              <ul>
+                <li class='current_tab'><span>全部</span></li>
+                <li><span>炼油一部</span></li>
+                <li><span>化肥一部</span></li>
+                <li><span>工业公司</span></li>
+                <li><span>物资供应部</span></li>
+                <li><span>炼油二部</span></li>
+                <li><span>炼油四部</span></li>
+                <li><span>水汽部</span></li>
+                <li><span>油品部</span></li>
+                <li><span>工程管理部</span></li>
+                <li><span>电仪部</span></li>
+                <li><span>储运部</span></li>
+              </ul>
+            </li>
+          </ul>
+          <div class='see_more'>
+            查看更多 》
+          </div>
+        </li>
+      </ul>
+
+      <ul class="section_tow">
+        <!--左下-->
+        <li class="section_tow_left">
+          <div class="section_tow_bar">
+            <div class="border_corner border_corner_left_top"></div>
+            <div class="border_corner border_corner_right_top"></div>
+            <div class="border_corner border_corner_left_bottom"></div>
+            <div class="border_corner border_corner_right_bottom"></div>
+            <ul class="main">
+              <li class="section_chart_name">
+                <div class="chart_name_title">
+                  <span class="solid_circle"></span>
+                  <span class="title">库存</span>
+                </div>
+              </li>
+              <li id='bar' class="section_bar_box"></li>
+            </ul>
+          </div>
+          <div class="section_tow_panel">
+            <div class="border_corner border_corner_left_top"></div>
+            <div class="border_corner border_corner_right_top"></div>
+            <div class="border_corner border_corner_left_bottom"></div>
+            <div class="border_corner border_corner_right_bottom"></div>
+            <ul class="main">
+              <li class="section_chart_name">
+                <div class="chart_name_title">
+                  <span class="solid_circle"></span>
+                  <span class="title">销售</span>
+                </div>
+
+                <div class="type_tags">
+                  <span class="tag">#92汽油</span>
+                  <span class="tag">#95汽油</span>
+                  <span class="tag">柴油</span>
+                  <span class="tag">航煤</span>
+                  <span class="tag">聚丙烯</span>
+                  <span class="tag">尿素</span>
+                  <span class="tag">笨</span>
+                </div>
+              </li>
+
+              <li class="section_panel_box">
+                <div id="curve" class="curve_chart"></div>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <!--右下-->
+        <li class="section_tow_right">
+          <!--环保-->
+          <div class='environmental_content'>
+            <div class="border_corner border_corner_left_top"></div>
+            <div class="border_corner border_corner_right_top"></div>
+            <div class="border_corner border_corner_left_bottom"></div>
+            <div class="border_corner border_corner_right_bottom"></div>
+            <div class="main">
+              <div class="section_chart_name">
+                <div class="chart_name_title">
+                  <span class="solid_circle"></span>
+                  <span class="title">环保</span>
+                </div>
+
+                <div class="type_buttons">
+                  <div class="type_button_left">炼油</div>
+                  <div class="type_button_right">化肥</div>
+                </div>
+              </div>
+
+              <div id="environmental" class="section_panel_box">
+                <div id="dashboard_1" class="dashboard_chart"></div>
+                <div id="dashboard_2" class="dashboard_chart"></div>
+                <div id="dashboard_3" class="dashboard_chart"></div>
+              </div>
+
+            </div>
+          </div>
+
+          <!--财务日数据及技术经济指标-->
+          <div class='economic_indicators_content'>
+            <div class="border_corner border_corner_left_top"></div>
+            <div class="border_corner border_corner_right_top"></div>
+            <div class="border_corner border_corner_left_bottom"></div>
+            <div class="border_corner border_corner_right_bottom"></div>
+            <div class="main">
+              <div class="section_chart_name">
+                <div class="chart_name_title">
+                  <span class="solid_circle"></span>
+                  <span class="title">财务日数据及技术经济指标</span>
+                </div>
+              </div>
+
+
+              <div id="economic_indicators" class="section_panel_box">
+
+                <div class="indicators_table">
+                  <div class="table-title">
+                    <div class="w1"></div>
+                    <div class="w4">名称</div>
+                    <div class="w2">日量</div>
+                    <div class="w2">累计</div>
+                  </div>
+
+                  <div class="table-row">
+                    <div class="w1">
+                      <span class="serial_number">1</span>
+                    </div>
+                    <div class="w4 text_over">炼油利润</div>
+                    <div class="w2 text_over">163,542</div>
+                    <div class="w2 text_over">923155</div>
+                  </div>
+
+                  <div class="table-row">
+                    <div class="w1">
+                      <span class="serial_number">2</span>
+                    </div>
+                    <div class="w4 text_over">吨油利润</div>
+                    <div class="w2 text_over">163,542</div>
+                    <div class="w2 text_over">163,542</div>
+                  </div>
+
+                  <div class="table-row">
+                    <div class="w1">
+                      <span class="serial_number">3</span>
+                    </div>
+                    <div class="w4 text_over">完全加工成本</div>
+                    <div class="w2 text_over">163,542</div>
+                    <div class="w2 text_over">110,447</div>
+                  </div>
+
+                  <div class="table-row">
+                    <div class="w1">
+                      <span class="serial_number">4</span>
+                    </div>
+                    <div class="w4 text_over">吨油完全加工成本</div>
+                    <div class="w2 text_over">163,542</div>
+                    <div class="w2 text_over">110,447</div>
+                  </div>
+                </div>
+
+                <div id="indicators" class="indicators_chart">
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+    <footer id='footer'>
+      <div><img src="./image/CNPC_title.png" alt=""></div>
+      <p>宁夏石化个人工作平台</p>
+      <p>技术支持: 昆仑数智科技有限责任公司</p>
+    </footer>
+  </div>
+  <script type="text/javascript" src="./config/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript" src="./js/_.js"></script>
+  <script type="text/javascript" src="./js/triangle.js"></script>
+  <script type="text/javascript" src="./js/cross.js"></script>
+  <script type="text/javascript" src="./js/curve.js"></script>
+  <script type="text/javascript" src="./js/bar.js"></script>
+  <script type="text/javascript" src="./js/environmental.js"></script>
+  <script type="text/javascript" src="./js/indicators.js"></script>
+
+</body>
+
+</html>
