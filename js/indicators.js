@@ -9,8 +9,15 @@ function indicatorsDraw (yData) {
             }
         },
         legend: {
-            data: ['Evaporation', 'Rainfall'],
-            left: 10
+            data: ['综合商品率', '柴气', '可比综合商品率', '综合加工损失率', '炼油综合能耗'],
+            top: 0,
+            right: 30,
+            itemWidth: 20,  // 设置宽度
+            itemHeight: 10, // 设置高度
+            textStyle: {
+                color: '#87BAF8',  // 图例文字颜色
+                fontSize: 9
+            },
         },
         axisPointer: {
             link: [
@@ -19,7 +26,6 @@ function indicatorsDraw (yData) {
                 }
             ]
         },
-
         grid: [
             {
                 left:30,
@@ -81,7 +87,7 @@ function indicatorsDraw (yData) {
         ],
         series: [
             {
-                name: 'Evaporation',
+                name: '综合商品率',
                 type: 'bar',
                 xAxisIndex: 0,
                 yAxisIndex: 0,
@@ -93,7 +99,7 @@ function indicatorsDraw (yData) {
                 ]
             },
             {
-                name: 'Evaporation',
+                name: '柴气',
                 type: 'bar',
                 xAxisIndex: 0,
                 yAxisIndex: 0,
@@ -105,7 +111,7 @@ function indicatorsDraw (yData) {
                 ]
             },
             {
-                name: 'Rainfall',
+                name: '可比综合商品率',
                 type: 'bar',
                 xAxisIndex: 1,
                 yAxisIndex: 1,
@@ -117,7 +123,7 @@ function indicatorsDraw (yData) {
                 ]
             },
             {
-                name: 'Rainfall',
+                name: '综合加工损失率',
                 type: 'bar',
                 xAxisIndex: 1,
                 yAxisIndex: 1,
@@ -129,7 +135,7 @@ function indicatorsDraw (yData) {
                 ]
             },
             {
-                name: 'Rainfall',
+                name: '炼油综合能耗',
                 type: 'bar',
                 xAxisIndex: 1,
                 yAxisIndex: 1,

@@ -442,7 +442,7 @@
 #section .section_chart_name {
   font-size: 18px;
   margin: 15px 15px 0 15px;
-  font-weight: 500;
+  font-weight: bold;
   display: flex;
   justify-content: space-between;
   align-content: center;
@@ -462,6 +462,7 @@
 }
 
 #section .chart_name_title span.title{
+  font-weight: bold;
   background-image: linear-gradient(92deg, #007AFF 0%, #00DAFF 52%, #01B1FF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -598,9 +599,8 @@
   margin:20px 0;
 }
 #section .section_bar_box{
-  width: calc(100% - 20px);
-  height: calc(100% - 78px);
-  margin: 0 20px 20px;
+  width: 100%;
+  height: calc(100% - 60px);
 }
 #section .section_tow_panel{
   width: 694px;
@@ -644,9 +644,10 @@
 /* 各单位风险作业数量统计 */
 #section .section_one_right .main>li:nth-child(2){
   height: 362px;
-  background: rgba(3,62,138,0.3000);
+  background: rgba(3,62,138,0.1000);
   border: 1px solid #06CCD1;
   margin: 15px 30px 0 60px;
+  width: calc(100% - 90px);
 }
 #section .section_one_cycle .mainli:nth-child(3){
   padding: 40px 20px 20px 60px;

@@ -8,7 +8,7 @@ function crossDraw (yData) {
       top: 100,
       bottom: 80,
       left: 80,
-      // borderColor: '#ccc'
+      borderColor: 'rgba(3,62,138,0.1000)'
     },
     legend: {
       data: ['预约作业数量', '其中八项危险作业数量'],

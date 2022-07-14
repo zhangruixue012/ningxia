@@ -1,13 +1,5 @@
 
-function environmentalDraw (yData1, yData2) {
-    var chartDom1 = document.getElementById('dashboard_1');
-    var myChart1 = echarts.init(chartDom1);
-
-    var chartDom2 = document.getElementById('dashboard_2');
-    var myChart2 = echarts.init(chartDom2);
-
-    var chartDom3 = document.getElementById('dashboard_3');
-    var myChart3 = echarts.init(chartDom3);
+function environmentalDraw (data) {
 
     var option = {
         series: [
@@ -44,18 +36,7 @@ function environmentalDraw (yData1, yData2) {
                     color: '#fff',
                     fontSize: 8,
                     distance: -40,
-                    formatter: function (value) {
-                        if (value === 30) {
-                            return 'A';
-                        } else if (value === 40) {
-                            return 'B';
-                        } else if (value === 50) {
-                            return 'C';
-                        } else if (value === 70) {
-                            return 'D';
-                        }
-                        return '';
-                    }
+                    data: [10, 30, 50, 70, 90, 100]
                 },
                 anchor: {
                     show: true,
@@ -76,35 +57,64 @@ function environmentalDraw (yData1, yData2) {
                     fontSize: 16,
                     offsetCenter: [0, '60%'],
                     color: '#FFBF24',
-                },
-                data: [
-                    {
-                        value: 70,
-                        name: '外排水COD'
-                    }
-                ]
+                }
             }
         ]
     };
+
+
+    var chartDom1 = document.getElementById('dashboard_1');
+    var myChart1 = echarts.init(chartDom1);
+
+    var chartDom2 = document.getElementById('dashboard_2');
+    var myChart2 = echarts.init(chartDom2);
+
+    var chartDom3 = document.getElementById('dashboard_3');
+    var myChart3 = echarts.init(chartDom3);
+
+
+    // 仪表盘1
+    const option1 = {...option};
+    option1.series[0].data = [data[0]];
     myChart1.setOption(option);
-    myChart2.setOption(option);
-    myChart3.setOption(option);
+
+
+    // 仪表盘2
+    const option2 = {...option};
+    option2.series[0].data = [data[1]]
+    myChart2.setOption(option2);
+
+
+    // 仪表盘3
+    const option3 = {...option};
+    option3.series[0].data = [data[2]]
+    myChart3.setOption(option3);
 
     myChart1.getZr().on('click', function (params) {
         const chartId = 'environment_line_0';
-        createChartDiv(chartId, '环保趋势1');
-        circleDialogChartDrawer(0, chartId);
+        createChartDiv(chartId, data[0].name);
+
+        const xData = ['1月', '2月', '3月', '4月', '5月', '6月', '7月'];
+        const yData = [140, 232, 101, 264, 90, 340, 250];
+        circleDialogChartDrawer(0, chartId, OPTION_MAPPING, xData, yData);
     });
 
     myChart2.getZr().on('click', function (params) {
         const chartId = 'environment_line_1';
-        createChartDiv(chartId, '环保趋势2');
-        circleDialogChartDrawer(1, chartId);
+        createChartDiv(chartId, data[1].name);
+
+
+        const xData = ['1月', '2月', '3月', '4月', '5月', '6月', '7月'];
+        const yData = [140, 232, 101, 264, 90, 340, 250];
+        circleDialogChartDrawer(1, chartId, OPTION_MAPPING, xData, yData);
     });
 
     myChart3.getZr().on('click', function (params) {
         const chartId = 'environment_line_2';
-        createChartDiv(chartId, '环保趋势3');
-        circleDialogChartDrawer(2, chartId);
+        createChartDiv(chartId, data[2].name);
+
+        const xData = ['1月', '2月', '3月', '4月', '5月', '6月', '7月'];
+        const yData = [140, 232, 101, 264, 90, 340, 250];
+        circleDialogChartDrawer(2, chartId, OPTION_MAPPING, xData, yData);
     });
 }

@@ -4,9 +4,6 @@ function curveDraw (yData) {
   var option = {
     grid: {
       top: 10,
-      // left: 50,
-      // right: 40,
-
     },
     tooltip: {
       trigger: 'axis',

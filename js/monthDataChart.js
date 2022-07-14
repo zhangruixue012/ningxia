@@ -6,9 +6,6 @@ function monthDataChartDraw(chartId) {
         tooltip: {
             trigger: 'axis'
         },
-        // legend: {
-        //     data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
-        // },
         grid: {
             left: '3%',
             right: '4%',
@@ -18,9 +15,20 @@ function monthDataChartDraw(chartId) {
         xAxis: {
             type: 'category',
             boundaryGap: false,
-            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            axisLabel: {
+                color: '#fff'
+            },
+            data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月']
         },
         yAxis: {
+            axisLabel: {
+                color: '#fff'
+            },
+            splitLine: {
+                lineStyle: {
+                    color: '#333'
+                }
+            },
             type: 'value'
         },
         series: [

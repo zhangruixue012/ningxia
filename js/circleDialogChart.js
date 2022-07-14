@@ -1,4 +1,4 @@
-function circleDialogChartDrawer(index, chartId) {
+function circleDialogChartDrawer(index, chartId, dynamicOption, xAxisData, yAxisData) {
 
     var chartDom = document.getElementById(chartId);
     var myChart = echarts.init(chartDom);
@@ -23,13 +23,20 @@ function circleDialogChartDrawer(index, chartId) {
             {
                 type: 'category',
                 boundaryGap: false,
-                data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月']
+                axisLabel: {
+                    color: '#fff'
+                },
+                data: xAxisData
             }
         ],
         yAxis: [
             {
-                type: 'value'
-            }
+                type: 'value',
+                axisLabel: {
+                    color: '#fff'
+                },
+            },
+
         ],
         series: [
             {
@@ -44,18 +51,18 @@ function circleDialogChartDrawer(index, chartId) {
                     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                         {
                             offset: 0,
-                            color: OPTION_MAPPING[index].colorStart
+                            color: dynamicOption[index].colorStart
                         },
                         {
                             offset: 1,
-                            color: OPTION_MAPPING[index].colorEnd
+                            color: dynamicOption[index].colorEnd
                         }
                     ])
                 },
                 emphasis: {
                     focus: 'series'
                 },
-                data: [140, 232, 101, 264, 90, 340, 250]
+                data: yAxisData
             }
         ]
     };

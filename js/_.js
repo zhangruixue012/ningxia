@@ -35,14 +35,15 @@ $(document).ready(function () {
     }
   }
 
+
+  // 销售模块tag点击
   $(".type_tags span").click(function () {
     $(this).addClass("active").siblings().removeClass("active");
-
+    alert('销售模块tag点击');
     curveDraw([[82, 93, 901, 934, 290, 130, 120, 780, 880, 560, 120, 450],
       [72, 73, 90, 974, 120, 130, 10, 90, 130, 1000, 880, 65],
       [19, 73, 910, 94, 190, 90, 120, 1140, 121, 101, 100, 890]])
   })
-
 
   //销售模块的曲线图
   //yData = [[], [], []]的第一据是外排水COD的数据，第二项NH3-N的数据，第三项是外排水PH的数据
@@ -51,261 +52,20 @@ $(document).ready(function () {
     [19, 73, 910, 94, 190, 90, 120, 1140, 121, 101, 100, 890]])
 
 
-  //库存绘制
-  // yData是柱状体对应的数据
-  // drilldownData点击柱状体后变成曲线对应的数据
-  //注意 1.yData的groupId和drilldownData的dataGroupId相对应
-  //     2.从后端获取的数据格式和下面不一致，一定要在echarts相关的js文件修改对应的关系
-  //maxYData是对应的柱状体的最大值（背景阴影）
-  let maxYData = ['1000', '900', '1200', '800', '1200', '900', '1100', '1300', '1000', '990', '800']
-  let yData = [
-    {
-      value: 731,
-      groupId: 'yy',
-    },
-    {
-      value: 719,
-      groupId: 'chyl'
-    },
-    {
-      value: 773,
-      groupId: 'czyl'
-    },
-    {
-      value: 719,
-      groupId: 'cpqy'
-    },
-    {
-      value: 419,
-      groupId: 'bcpqy'
-    },
-    {
-      value: 343,
-      groupId: 'cpcy'
-    },
-    {
-      value: 731,
-      groupId: 'bcpcy'
-    },
-    {
-      value: 731,
-      groupId: 'cphm'
-    },
-    {
-      value: 719,
-      groupId: 'yj'
-    },
-    {
-      value: 773,
-      groupId: 'ya'
-    },
-    {
-      value: 719,
-      groupId: 'ns'
-    }
-  ]
-  let drilldownData = [
-    {
-      dataGroupId: 'yy',
-      data: [
-        ['1月', 24],
-        ['2月', 26],
-        ['3月', 31],
-        ['4月', 24],
-        ['5月', 19],
-        ['6月', 81],
-        ['7月', 71],
-        ['8月', 61],
-        ['9月', 51],
-        ['10月', 41],
-        ['11月', 31],
-        ['12月', 21]
-      ]
-    },
-    {
-      dataGroupId: 'chyl',
-      data: [
-        ['1月', 214],
-        ['2月', 261],
-        ['3月', 131],
-        ['4月', 240],
-        ['5月', 619],
-        ['6月', 81],
-        ['7月', 71],
-        ['8月', 610],
-        ['9月', 510],
-        ['10月', 410],
-        ['11月', 131],
-        ['12月', 211]
-      ]
-    },
-    {
-      dataGroupId: 'czyl',
-      data: [
-        ['1月', 24],
-        ['2月', 26],
-        ['3月', 31],
-        ['4月', 24],
-        ['5月', 19],
-        ['6月', 81],
-        ['7月', 71],
-        ['8月', 61],
-        ['9月', 51],
-        ['10月', 41],
-        ['11月', 31],
-        ['12月', 21]
-      ]
-    },
-    {
-      dataGroupId: 'cpqy',
-      data: [
-        ['1月', 24],
-        ['2月', 26],
-        ['3月', 31],
-        ['4月', 24],
-        ['5月', 19],
-        ['6月', 81],
-        ['7月', 71],
-        ['8月', 61],
-        ['9月', 51],
-        ['10月', 41],
-        ['11月', 31],
-        ['12月', 21]
-      ]
-    },
-    {
-      dataGroupId: 'bcpqy',
-      data: [
-        ['1月', 24],
-        ['2月', 26],
-        ['3月', 31],
-        ['4月', 24],
-        ['5月', 19],
-        ['6月', 81],
-        ['7月', 71],
-        ['8月', 61],
-        ['9月', 51],
-        ['10月', 41],
-        ['11月', 31],
-        ['12月', 21]
-      ]
-    },
-    {
-      dataGroupId: 'cpcy',
-      data: [
-        ['1月', 24],
-        ['2月', 26],
-        ['3月', 31],
-        ['4月', 24],
-        ['5月', 19],
-        ['6月', 81],
-        ['7月', 71],
-        ['8月', 61],
-        ['9月', 51],
-        ['10月', 41],
-        ['11月', 31],
-        ['12月', 21]
-      ]
-    },
-    {
-      dataGroupId: 'bcpcy',
-      data: [
-        ['1月', 24],
-        ['2月', 26],
-        ['3月', 31],
-        ['4月', 24],
-        ['5月', 19],
-        ['6月', 81],
-        ['7月', 71],
-        ['8月', 61],
-        ['9月', 51],
-        ['10月', 41],
-        ['11月', 31],
-        ['12月', 21]
-      ]
-    },
-    {
-      dataGroupId: 'cphm',
-      data: [
-        ['1月', 24],
-        ['2月', 26],
-        ['3月', 31],
-        ['4月', 24],
-        ['5月', 19],
-        ['6月', 81],
-        ['7月', 71],
-        ['8月', 61],
-        ['9月', 51],
-        ['10月', 41],
-        ['11月', 31],
-        ['12月', 21]
-      ]
-    },
-    {
-      dataGroupId: 'yj',
-      data: [
-        ['1月', 24],
-        ['2月', 26],
-        ['3月', 31],
-        ['4月', 24],
-        ['5月', 19],
-        ['6月', 81],
-        ['7月', 71],
-        ['8月', 61],
-        ['9月', 51],
-        ['10月', 41],
-        ['11月', 31],
-        ['12月', 21]
-      ]
-    },
-    {
-      dataGroupId: 'ya',
-      data: [
-        ['1月', 24],
-        ['2月', 26],
-        ['3月', 31],
-        ['4月', 24],
-        ['5月', 19],
-        ['6月', 81],
-        ['7月', 71],
-        ['8月', 61],
-        ['9月', 51],
-        ['10月', 41],
-        ['11月', 31],
-        ['12月', 21]
-      ]
-    },
-    {
-      dataGroupId: 'ns',
-      data: [
-        ['1月', 24],
-        ['2月', 26],
-        ['3月', 31],
-        ['4月', 24],
-        ['5月', 19],
-        ['6月', 81],
-        ['7月', 71],
-        ['8月', 61],
-        ['9月', 51],
-        ['10月', 41],
-        ['11月', 31],
-        ['12月', 21]
-      ]
-    }
-  ];
-  barDraw(yData, drilldownData, maxYData)
+
+
+  // 最大值集合
+  var maxDataList = [20000, 20000, 15000, 13000, 30040, 20000, 20000, 20000, 20000, 20000, 20000];
+  // 实际库存量集合
+  var actualData = [10000,19099, 8000, 6000, 4000, 16000, 5000, 2000, 14900, 2888, 8906];
+  // 库存柱状图绘制：
+  barDraw(maxDataList, actualData);
 
 
   $(".section_panel_tab  li").click(function () {
     $(this).addClass("current").siblings().removeClass("current");
     var index = $(this).index(); //index为0是燃油,1为化肥
     alert('传tab对应y轴数据')
-    curveDraw([[820, 93, 901, 934, 290, 30, 120, 80, 80, 160, 120, 450],
-      [772, 73, 901, 74, 120, 130, 101, 90, 130, 100, 880, 65],
-      [191, 731, 91, 914, 90, 900, 120, 140, 121, 101, 100, 90]])
-    // panel1Draw(50, 9)
-    // panel2Draw(60, 20)
-    // panel3Draw(200, 180)
   });
 
 
@@ -328,15 +88,32 @@ $(document).ready(function () {
     alert('点击更多按钮')
   });
 
-  $('.type_buttons div').click(function () {
-    $(this).addClass("active").siblings().removeClass("active");
-    environmentalDraw();
-  })
 
   // 环保模块仪表盘绘制
-  environmentalDraw();
+  const environmentalData = [
+    {value: 70, name: '外排水COD'},
+    {value: 30, name: 'NH3-N'},
+    {value: 50, name: '外排水PH'}
+  ]
+  environmentalDraw(environmentalData);
+
+  // 环保模块button切换
+  $('.type_buttons div').click(function () {
+    $(this).addClass("active").siblings().removeClass("active");
+
+    const environmentalData1 = [
+      {value: 10, name: '厂尿素外排PH'},
+      {value: 40, name: 'NH3-N'},
+      {value: 80, name: 'COD'}
+    ]
+    environmentalDraw(environmentalData1);
+  })
+
+
 
   // 财务日数据及技术经济指标模块
+
+
   indicatorsDraw();
 
   // 点击产品产量月数据
@@ -354,6 +131,9 @@ $(document).ready(function () {
 
     const chartId = 'circle_chart_' + index;
     createChartDiv(chartId, OPTION_MAPPING[index].title);
-    circleDialogChartDrawer(index, chartId);
+
+    const xData = ['1月', '2月', '3月', '4月', '5月', '6月', '7月'];
+    const yData = [140, 232, 101, 264, 90, 340, 250];
+    circleDialogChartDrawer(index, chartId, OPTION_MAPPING, xData, yData);
   })
 })
