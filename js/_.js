@@ -134,6 +134,6 @@ $(document).ready(function () {
 
     const xData = ['1月', '2月', '3月', '4月', '5月', '6月', '7月'];
     const yData = [140, 232, 101, 264, 90, 340, 250];
-    circleDialogChartDrawer(index, chartId, OPTION_MAPPING, xData, yData);
+    circleDialogChartDrawer(index, chartId, INVENTORY_OPTION_MAPPING, xData, yData);
   })
 })

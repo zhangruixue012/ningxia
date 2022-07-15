@@ -5,17 +5,16 @@ function crossDraw (yData) {
   var option = {
     color: colors,
     grid: {
-      top: 100,
-      bottom: 80,
-      left: 80,
+      top: 50,
+      bottom: 65,
+      left: 55,
+      right: 10,
       borderColor: 'rgba(3,62,138,0.1000)'
     },
     legend: {
       data: ['预约作业数量', '其中八项危险作业数量'],
       top: 20,
       right: 30,
-      itemWidth: 20,  // 设置宽度
-　　  itemHeight: 10, // 设置高度
       textStyle: {
         color: '#87BAF8',  // 图例文字颜色
         fontSize: 9
@@ -32,16 +31,18 @@ function crossDraw (yData) {
     },
     xAxis: {
       type: 'category',
-      data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+      data: ['2022-07-09', '2022-07-10', '2022-07-11', '2022-07-12', '2022-07-13', '2022-07-14', '2022-07-15', '2022-07-16', '2022-07-17', '2022-07-18', '2022-07-19', '2022-07-20'],
       axisLine: {
         show: false
       },
       axisLabel: {
         show: true,
+        interval: false,
         textStyle: {
           color: '#fff',  //更改坐标轴文字颜色
           fontSize: 10      //更改坐标轴文字大小
         },
+        rotate: 45,
         padding: [20, 0, 0, 6]
       },
       splitLine: {

@@ -3,11 +3,6 @@ function barDraw (maxData, data) {
   var chartDom = document.getElementById('bar');
   var myChart = echarts.init(chartDom);
 
-  // 最大值集合
-  // var maxData = [20000, 20000, 15000, 13000, 30040, 20000, 20000, 20000, 20000, 20000, 20000];
-  // 库存量集合
-  // var data = [10000,19099, 8000, 6000, 4000, 16000, 5000, 2000, 14900, 2888, 8906];
-
   var picData = ['image://./image/pillars_blue.svg',
     'image://./image/pillars_green.svg',
     'image://./image/pillars_yellow.svg',
@@ -113,7 +108,7 @@ function barDraw (maxData, data) {
 
       const xData = ['1月', '2月', '3月', '4月', '5月', '6月', '7月'];
       const yData = [140, 232, 101, 264, 90, 340, 250];
-      circleDialogChartDrawer(xIndex, chartId, OPTION_MAPPING, xData, yData);
+      circleDialogChartDrawer(xIndex, chartId, INVENTORY_OPTION_MAPPING, xData, yData);
 
     }
   });

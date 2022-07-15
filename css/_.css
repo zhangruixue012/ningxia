@@ -8,14 +8,18 @@
   /* box-shadow: rgba(0, 0, 0, 0.16); */
   filter: blur;
 }
+
+#top_content {
+  border-bottom: 1px solid #FFFFFF;
+}
 #top{
   height: 35px;
-  border-bottom: 1px solid #FFFFFF;
   display: flex;
+  width: 1400px;
+  margin: 0 auto;
   justify-content: space-between;
 }
 #top .top_box_left{
-  margin-left: 210px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -32,11 +36,10 @@
   font-weight: bold;
 }
 #top .top_box_right{
-  margin-right: 260px;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end,
+  justify-content: flex-end
 }
 #top .top_date{
   font-size: 18px;
@@ -643,7 +646,7 @@
 
 /* 各单位风险作业数量统计 */
 #section .section_one_right .main>li:nth-child(2){
-  height: 362px;
+  height: 382px;
   background: rgba(3,62,138,0.1000);
   border: 1px solid #06CCD1;
   margin: 15px 30px 0 60px;

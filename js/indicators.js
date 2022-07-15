@@ -9,11 +9,22 @@ function indicatorsDraw (yData) {
             }
         },
         legend: {
+            // type: 'scroll',
+            // pageIconColor: '#fff',
+            // pageIconInactiveColor: '#fff',
+            // pageIconSize: 8,
+            // pageTextStyle: {
+            //     color: '#fff'
+            // },
+
+            itemWidth: 8,
+            selectorLabel: {
+                overflow: 'break'
+            },
             data: ['综合商品率', '柴气', '可比综合商品率', '综合加工损失率', '炼油综合能耗'],
             top: 0,
-            right: 30,
-            itemWidth: 20,  // 设置宽度
-            itemHeight: 10, // 设置高度
+            right: 0,
+            left: 0,
             textStyle: {
                 color: '#87BAF8',  // 图例文字颜色
                 fontSize: 9
